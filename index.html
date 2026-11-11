@@ -5,328 +5,768 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 <title>野灶营地 · 精准运营方案</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;background:#16201a;padding:0 0 48px;color:#33392f}
-.top-bar{background:linear-gradient(160deg,#1b2a22,#3f5c45);padding:26px 20px 22px;text-align:center}
-.top-bar .mini{font-size:11px;color:#f0c58a;letter-spacing:2px;margin-bottom:6px}
-.top-bar h1{font-size:22px;font-weight:800;color:#fff;letter-spacing:.5px;line-height:1.4}
-.top-bar .sub-line{font-size:12.5px;color:#f0c58a;margin-top:6px}
-.top-bar .tagline{display:inline-block;margin-top:10px;background:rgba(255,255,255,.12);border:1px solid #f0c58a;color:#f0c58a;font-size:12px;padding:4px 14px;border-radius:20px;letter-spacing:.5px}
-.container{max-width:430px;margin:0 auto;background:#fbfaf4;border-radius:20px 20px 0 0;padding:20px 16px 28px;margin-top:-14px}
-.card{background:#f4f2e8;border-radius:14px;padding:16px;margin-bottom:12px;border:1px solid #e0dcc9}
-.card .chapter{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px}
-.card .chapter .no{display:inline-flex;align-items:center;justify-content:center;background:#3f5c45;color:#fff;min-width:26px;height:26px;border-radius:50%;font-size:13px;font-weight:700;flex-shrink:0;margin-top:2px}
-.card .chapter .t{font-size:15.5px;font-weight:700;color:#1b2a22;line-height:1.4}
-.card p{font-size:14px;line-height:1.8;color:#434a3f;margin-bottom:6px}
-.card ul{padding-left:18px;line-height:1.9;font-size:14px;color:#434a3f}
-.card ul li{margin-bottom:4px}
-.card b,.card strong{color:#a96522}
-.info-box{background:linear-gradient(135deg,#1b2a22,#3f5c45);border-radius:14px;padding:16px;margin-bottom:12px;color:#fff}
-.info-box p{font-size:13.5px;line-height:1.75;color:#f2f5ee;margin-bottom:4px}
-.info-box b{color:#f0c58a}
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
-.info-grid .it{background:rgba(255,255,255,.1);border-radius:10px;padding:8px 10px}
-.info-grid .it .l{font-size:11px;color:#f0c58a;margin-bottom:2px}
-.info-grid .it .v{font-size:13px;font-weight:600;color:#fff}
-.hl{background:#fdf6e3;border-left:3px solid #c9a227;padding:8px 12px;border-radius:0 8px 8px 0;margin:8px 0;font-size:13.5px;line-height:1.8;color:#5a4a32}
-.hl b{color:#8b5a2b}
-.warn{background:#fdece8;border-left:3px solid #c0392b;padding:8px 12px;border-radius:0 8px 8px 0;margin:8px 0;font-size:13.5px;line-height:1.8;color:#6b3a32}
-.warn b{color:#c0392b}
-table{width:100%;border-collapse:collapse;margin:8px 0;font-size:12.6px;table-layout:fixed}
-th,td{border:1px solid #ddd9c8;padding:6px 7px;text-align:left;vertical-align:top;line-height:1.6;word-break:break-word}
-th{background:#eae7d6;color:#1b2a22;font-weight:700}
-td b{color:#3f5c45}
-.muted{font-size:12.6px;color:#8b8f85;line-height:1.7}
-.badge{display:inline-block;font-size:11px;padding:1px 7px;border-radius:10px;margin-right:4px}
-.b-r{background:#fdece8;color:#c0392b}
-.b-y{background:#fdf6e3;color:#8b5a2b}
-.b-g{background:#e8f0e4;color:#3f5c45}
-.foot{text-align:center;font-size:11.5px;color:#8f938a;padding:14px 6px 0;line-height:1.7}
+:root{
+  --ink:#0e1712;
+  --g1:#16241c;
+  --g2:#22382b;
+  --g3:#3c5a44;
+  --gold:#e8b872;
+  --gold2:#f6dfae;
+  --ember:#d4693c;
+  --sand:#f7f2e4;
+  --paper:#fcf9f0;
+  --line:#e2dbc6;
+  --txt:#3f4a40;
+  --mute:#8b8f82;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+  background:var(--ink);
+  color:var(--txt);
+  line-height:1.6;
+  padding:0 0 40px;
+}
+.wrap{max-width:520px;margin:0 auto;background:var(--paper);overflow:hidden;position:relative}
+
+/* ============ 封面 ============ */
+.cover{
+  position:relative;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(232,184,114,.28) 0%, rgba(232,184,114,0) 42%),
+    radial-gradient(circle at 12% 82%, rgba(212,105,60,.22) 0%, rgba(212,105,60,0) 46%),
+    linear-gradient(168deg,#0f1d16 0%,#1b2f23 55%,#2b4433 100%);
+  padding:44px 26px 40px;
+  color:#fff;
+  overflow:hidden;
+}
+/* 串灯点阵 */
+.cover::before{
+  content:"";
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(246,223,174,.55) 1.1px,transparent 1.4px);
+  background-size:26px 26px;
+  opacity:.28;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.9),rgba(0,0,0,0) 62%);
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.9),rgba(0,0,0,0) 62%);
+}
+.cover .kicker{
+  position:relative;font-size:10.5px;letter-spacing:.42em;color:var(--gold);
+  margin-bottom:16px;text-transform:uppercase;
+}
+.cover h1{
+  position:relative;font-size:40px;font-weight:800;letter-spacing:.06em;line-height:1.15;
+  margin-bottom:10px;
+}
+.cover h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,#f6dfae,#e8b872 60%,#d4693c);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.cover .lead{position:relative;font-size:13px;color:rgba(255,255,255,.72);letter-spacing:.02em}
+.cover .rule{position:relative;height:1px;background:linear-gradient(90deg,var(--gold),rgba(232,184,114,0));margin:22px 0 18px}
+.cover .meta{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;font-size:11.5px}
+.cover .meta .k{color:rgba(255,255,255,.45);font-size:10px;letter-spacing:.1em;margin-bottom:2px}
+.cover .meta .v{color:#fff;font-weight:600;font-size:12.5px}
+
+/* ============ 通用 ============ */
+.sec{padding:34px 22px 6px}
+.sec:last-of-type{padding-bottom:26px}
+.chap{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.chap .num{
+  font-size:11px;font-weight:800;color:var(--gold);letter-spacing:.14em;
+  border:1px solid rgba(232,184,114,.5);border-radius:4px;padding:2px 7px;flex:none;
+}
+.chap h2{font-size:19px;font-weight:800;color:var(--g1);letter-spacing:.01em;line-height:1.35}
+.chap .sub{font-size:11px;color:var(--mute);margin-left:auto;flex:none}
+p{font-size:14px;line-height:1.85;color:var(--txt);margin-bottom:10px}
+p b,li b{color:#9a5a1e;font-weight:700}
+.muted{font-size:12px;color:var(--mute);line-height:1.75}
+.sp{height:8px}
+
+/* 引言块 */
+.pull{
+  border-left:2px solid var(--ember);padding:2px 0 2px 14px;margin:14px 0;
+  font-size:14px;line-height:1.85;color:#5c4a38;
+}
+.pull b{color:#a54f22}
+
+/* 卡片 */
+.card{background:var(--sand);border-radius:14px;padding:16px 15px;margin-bottom:12px}
+.card.dark{background:linear-gradient(150deg,var(--g1),var(--g2));color:#fff}
+.card.dark p,.card.dark li{color:rgba(255,255,255,.82)}
+.card.dark b{color:var(--gold)}
+.card.dark .muted{color:rgba(255,255,255,.45)}
+
+/* 四数字 */
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 4px}
+.num-card{
+  background:linear-gradient(150deg,#14231a,#26402e);
+  border-radius:14px;padding:15px 13px 13px;position:relative;overflow:hidden;
+}
+.num-card::after{
+  content:"";position:absolute;right:-18px;top:-18px;width:64px;height:64px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,184,114,.24),transparent 70%);
+}
+.num-card .n{font-size:27px;font-weight:800;color:var(--gold2);line-height:1.1;letter-spacing:-.01em}
+.num-card .n small{font-size:12px;font-weight:600;margin-left:1px}
+.num-card .lab{font-size:11.5px;color:rgba(255,255,255,.62);margin-top:6px;line-height:1.5}
+
+/* 同心圆 */
+.rings{position:relative;height:250px;margin:6px 0 0}
+.ring{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  border-radius:50%;border:1px dashed rgba(60,90,68,.35);
+  display:flex;align-items:flex-start;justify-content:center;
+}
+.r1{width:96px;height:96px;background:radial-gradient(circle,rgba(212,105,60,.16),rgba(212,105,60,.04));border:1px solid rgba(212,105,60,.5)}
+.r2{width:176px;height:176px}
+.r3{width:246px;height:246px}
+.ring .tag{
+  font-size:9.5px;color:var(--g3);background:var(--paper);padding:0 5px;
+  margin-top:-7px;letter-spacing:.06em;font-weight:700;
+}
+.ring-core{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  text-align:center;width:88px;
+}
+.ring-core .dot{width:9px;height:9px;border-radius:50%;background:var(--ember);margin:0 auto 5px;box-shadow:0 0 0 4px rgba(212,105,60,.18)}
+.ring-core .nm{font-size:12px;font-weight:800;color:var(--g1);line-height:1.35}
+.ring-note{
+  position:absolute;font-size:10.5px;color:var(--g3);line-height:1.45;max-width:120px;
+}
+.n-a{top:24px;left:50%;transform:translateX(-50%);text-align:center;max-width:180px}
+.n-b{top:52%;left:50%;transform:translate(46px,-50%);width:96px}
+.n-c{bottom:8px;left:50%;transform:translateX(-50%);text-align:center;max-width:220px}
+
+/* 横条图 */
+.bars{margin:10px 0 4px}
+.bar-row{display:grid;grid-template-columns:104px 1fr 52px;align-items:center;gap:8px;margin-bottom:7px}
+.bar-row .nm{font-size:11.5px;color:var(--g1);font-weight:600;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-track{height:13px;background:#ece6d5;border-radius:3px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#3c5a44,#6c8f6e)}
+.bar-fill.hot{background:linear-gradient(90deg,#b4572f,#d4693c)}
+.bar-fill.mid{background:linear-gradient(90deg,#8a8455,#b9a86a)}
+.bar-row .val{font-size:11px;color:var(--mute);text-align:right;font-variant-numeric:tabular-nums}
+.bar-group-title{
+  font-size:11px;font-weight:800;color:var(--g3);letter-spacing:.12em;margin:16px 0 8px;
+  padding-bottom:5px;border-bottom:1px solid var(--line);
+}
+.bar-group-title span{float:right;font-weight:600;letter-spacing:0;color:var(--mute);font-size:10.5px}
+
+/* 时段热力 */
+.hours{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;margin:12px 0 6px}
+.hours .h{height:34px;border-radius:3px;background:#ece6d5}
+.hours .h.lv1{background:#dfd8c1}
+.hours .h.lv2{background:#b9c4a4}
+.hours .h.lv3{background:#7d9a72}
+.hours .h.lv4{background:#4a6b4f}
+.hours .h.lv5{background:#d4693c}
+.hour-lab{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;font-size:8.5px;color:var(--mute);text-align:center}
+.legend{display:flex;gap:12px;font-size:10.5px;color:var(--mute);margin-top:8px;flex-wrap:wrap}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:middle}
+
+/* 客群比例 */
+.mix{display:flex;height:26px;border-radius:6px;overflow:hidden;margin:12px 0 8px;font-size:9.5px;color:#fff;font-weight:700}
+.mix div{display:flex;align-items:center;justify-content:center;letter-spacing:.02em}
+
+/* 四象限 */
+.quad{position:relative;height:210px;margin:16px 6px 8px;border-left:1px solid var(--line);border-bottom:1px solid var(--line)}
+.quad .ax{position:absolute;font-size:9.5px;color:var(--mute)}
+.quad .ax-y{left:-4px;top:-16px}
+.quad .ax-x{right:0;bottom:-17px}
+.quad .pt{position:absolute;transform:translate(-50%,-50%);text-align:center;width:72px}
+.quad .pt .dot{width:10px;height:10px;border-radius:50%;margin:0 auto 4px;background:var(--g3)}
+.quad .pt .nm{font-size:10.5px;font-weight:700;color:var(--g1);line-height:1.3}
+.quad .pt .sm{font-size:9px;color:var(--mute)}
+.quad .cross-h{position:absolute;left:0;right:0;top:50%;border-top:1px dotted rgba(60,90,68,.22)}
+.quad .cross-v{position:absolute;top:0;bottom:0;left:50%;border-left:1px dotted rgba(60,90,68,.22)}
+
+/* 价格带 */
+.price-axis{position:relative;height:62px;margin:22px 4px 6px}
+.pa-line{position:absolute;top:20px;left:0;right:0;height:2px;background:linear-gradient(90deg,#dfd8c1,#b9a86a)}
+.pa-pt{position:absolute;top:14px;transform:translateX(-50%);text-align:center;width:60px}
+.pa-pt .b{width:2px;height:14px;margin:0 auto;background:var(--g3)}
+.pa-pt .t{font-size:9px;color:var(--mute);margin-top:14px;line-height:1.25}
+.pa-pt .p{font-size:10px;font-weight:700;color:var(--g1);margin-top:2px}
+.pa-pt.hi .b{background:var(--ember)}
+
+/* 档口流程 */
+.flow{display:grid;grid-template-columns:1fr;gap:0;margin:12px 0}
+.flow .order{
+  background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 12px;
+  font-size:12px;color:var(--g1);font-weight:700;text-align:center;
+}
+.flow .arrow{text-align:center;color:var(--g3);font-size:13px;line-height:1.5}
+.flow .outs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.flow .out{
+  background:var(--sand);border-radius:9px;padding:9px 6px;text-align:center;
+}
+.flow .out .o1{font-size:11.5px;font-weight:800;color:var(--g1)}
+.flow .out .o2{font-size:9.5px;color:var(--mute);margin-top:2px}
+
+/* 硬件清单 */
+.hw{display:grid;grid-template-columns:1fr;gap:7px;margin:10px 0}
+.hw .row{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 11px}
+.hw .qty{flex:none;font-size:11px;font-weight:800;color:#fff;background:var(--g3);border-radius:5px;padding:2px 6px;min-width:26px;text-align:center}
+.hw .what{font-size:12.5px;color:var(--g1);font-weight:600;line-height:1.4}
+.hw .what small{display:block;font-size:10.5px;color:var(--mute);font-weight:400;margin-top:1px}
+.hw .row.no{opacity:.55}
+.hw .row.no .qty{background:#b9b2a0}
+
+/* 视觉：色板 */
+.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:12px 0 6px}
+.sw{border-radius:8px;height:56px;position:relative;overflow:hidden}
+.sw span{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,.42);color:#fff;font-size:8.5px;text-align:center;padding:2px 0}
+.sw.bad::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.55),rgba(255,255,255,.55) 2px,transparent 2px,transparent 5px)}
+
+/* 视觉：灯光分层 */
+.light{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.light .l{background:linear-gradient(180deg,#1b2f23,#3c5a44);border-radius:10px;padding:12px 9px;color:#fff}
+.light .l .t{font-size:11px;font-weight:800;color:var(--gold2)}
+.light .l .d{font-size:10px;color:rgba(255,255,255,.62);margin-top:5px;line-height:1.5}
+
+/* 打卡点 */
+.spots{display:grid;grid-template-columns:1fr;gap:8px;margin:10px 0}
+.spot{display:flex;gap:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.spot .idx{flex:none;width:20px;height:20px;border-radius:50%;background:var(--ember);color:#fff;font-size:10.5px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.spot .t{font-size:12.5px;font-weight:700;color:var(--g1);line-height:1.4}
+.spot .d{font-size:11px;color:var(--mute);margin-top:2px;line-height:1.55}
+
+/* 预算分配 */
+.alloc{margin:10px 0 4px}
+.alloc .a-row{margin-bottom:9px}
+.alloc .a-top{display:flex;justify-content:space-between;font-size:11px;color:var(--g1);margin-bottom:3px}
+.alloc .a-top .pct{color:var(--ember);font-weight:800}
+.alloc .a-track{height:8px;background:#ece6d5;border-radius:3px;overflow:hidden}
+.alloc .a-fill{height:100%;background:linear-gradient(90deg,#3c5a44,#8a8455);border-radius:3px}
+
+/* 阶段曲线 */
+.stage{display:grid;grid-template-columns:1fr;gap:0;margin:12px 0}
+.stage .s{display:flex;gap:12px;position:relative;padding-bottom:16px}
+.stage .s:last-child{padding-bottom:0}
+.stage .s::before{content:"";position:absolute;left:13px;top:26px;bottom:0;width:1px;background:var(--line)}
+.stage .s:last-child::before{display:none}
+.stage .dot{flex:none;width:27px;height:27px;border-radius:50%;border:1.5px solid var(--g3);background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:var(--g3);z-index:1}
+.stage .s.on .dot{background:var(--g1);border-color:var(--g1);color:var(--gold2)}
+.stage .body{flex:1;padding-top:1px}
+.stage .body .h{font-size:12.5px;font-weight:800;color:var(--g1);line-height:1.4}
+.stage .body .h em{font-style:normal;font-size:10.5px;color:var(--ember);font-weight:800;margin-left:6px}
+.stage .body .d{font-size:11.5px;color:var(--mute);margin-top:2px;line-height:1.6}
+
+/* 平台矩阵 */
+.matrix{display:grid;grid-template-columns:1fr;gap:7px;margin:12px 0}
+.mx{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:9px;background:#fff;border:1px solid var(--line)}
+.mx .st{flex:none;font-size:9.5px;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.04em}
+.mx .st.go{background:#eaf1e4;color:#3c5a44}
+.mx .st.no{background:#f6e3dc;color:#b4572f}
+.mx .nm{font-size:12.5px;font-weight:700;color:var(--g1)}
+.mx .ds{font-size:10.5px;color:var(--mute);margin-left:auto;text-align:right;max-width:46%}
+
+/* 三档执行 */
+.tiers{display:grid;grid-template-columns:1fr;gap:9px;margin:12px 0}
+.tier{border-radius:11px;padding:13px 14px;background:#fff;border:1px solid var(--line);position:relative;overflow:hidden}
+.tier::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px}
+.tier.a::before{background:#3c5a44}
+.tier.b::before{background:#b9a86a}
+.tier.c::before{background:var(--ember)}
+.tier .h{font-size:12.5px;font-weight:800;color:var(--g1);display:flex;align-items:baseline;gap:7px}
+.tier .h .hl{font-size:10px;font-weight:700;color:var(--mute)}
+.tier .d{font-size:11.5px;color:var(--txt);margin-top:5px;line-height:1.65}
+
+/* 时间轴 */
+.tl{position:relative;margin:16px 0 6px;padding-left:2px}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:10px;width:1px;background:var(--line)}
+.tl .n{position:relative;padding:0 0 16px 24px}
+.tl .n::before{content:"";position:absolute;left:2px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--g3)}
+.tl .n.key::before{background:var(--ember);border-color:var(--ember)}
+.tl .n .when{font-size:10px;font-weight:800;color:var(--ember);letter-spacing:.06em}
+.tl .n .what{font-size:12.5px;font-weight:700;color:var(--g1);margin-top:1px;line-height:1.45}
+.tl .n .how{font-size:11px;color:var(--mute);margin-top:2px;line-height:1.6}
+
+/* 坑 */
+.pit{display:flex;gap:11px;padding:12px 0;border-bottom:1px solid var(--line)}
+.pit:last-child{border-bottom:none}
+.pit .no{flex:none;font-size:15px;font-weight:800;color:#d9cfb4;width:20px;line-height:1.2}
+.pit .c .t{font-size:13px;font-weight:800;color:var(--g1);line-height:1.45}
+.pit .c .d{font-size:11.5px;color:var(--txt);margin-top:3px;line-height:1.7}
+
+/* 待确认 */
+.todo{display:grid;grid-template-columns:1fr;gap:7px;margin:10px 0}
+.todo .t{display:flex;gap:9px;background:#fff;border:1px solid var(--line);border-radius:9px;padding:10px 12px;font-size:12px;color:var(--g1);line-height:1.5}
+.todo .t .q{flex:none;color:var(--ember);font-weight:800}
+.todo .t small{display:block;color:var(--mute);font-size:10.5px;margin-top:2px;font-weight:400}
+
+/* 页脚 */
+.foot{
+  background:linear-gradient(160deg,var(--g1),var(--g2));color:rgba(255,255,255,.5);
+  padding:22px;text-align:center;font-size:10.5px;line-height:1.9;letter-spacing:.02em;
+}
+.foot b{color:var(--gold)}
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<div class="top-bar">
-  <div class="mini">精 准 运 营 方 案</div>
-  <h1>野灶营地</h1>
-  <div class="sub-line">东丽区 军粮城 和顺欣园16号楼 金角商业用房1090</div>
-  <div class="tagline">菜市场楼上的 200㎡ 营地风，卖四个品</div>
+<!-- ================= 封面 ================= -->
+<div class="cover">
+  <div class="kicker">PRECISION PLAYBOOK · 2026.11</div>
+  <h1><em>野灶营地</em></h1>
+  <div class="lead">四个品类 · 200㎡ · 长在菜市场楼上的社区店</div>
+  <div class="rule"></div>
+  <div class="meta">
+    <div><div class="k">位置</div><div class="v">东丽区军粮城<br>和顺欣园16号楼 金角商业用房1090</div></div>
+    <div><div class="k">面积</div><div class="v">总200㎡ / 用餐160㎡<br>约 18–22 桌</div></div>
+    <div><div class="k">品类</div><div class="v">砂锅粉面 · 戳子肉<br>板烧鱼 · 营地砂锅鸡</div></div>
+    <div><div class="k">人均</div><div class="v">午 20–26 / 晚 45–60<br>综合 36–44</div></div>
+  </div>
 </div>
 
-<div class="container">
+<!-- ================= 00 四个数字 ================= -->
+<div class="sec">
+  <div class="chap">
+    <span class="num">00</span>
+    <h2>如果只看四个数字</h2>
+  </div>
+  <div class="nums">
+    <div class="num-card">
+      <div class="n">4.3<small>分</small></div>
+      <div class="lab">同栋楼线上天花板<br>螺蛳粉 224 条评价</div>
+    </div>
+    <div class="num-card">
+      <div class="n">549<small>条</small></div>
+      <div class="lab">板烧鱼最强对手<br>尚渔味烤鱼 3.7 分</div>
+    </div>
+    <div class="num-card">
+      <div class="n">60–63<small>%</small></div>
+      <div class="lab">综合毛利率<br>粉面拉高、板烧鱼拉低</div>
+    </div>
+    <div class="num-card">
+      <div class="n">0<small>元</small></div>
+      <div class="lab">开业前 30 天<br>投流预算</div>
+    </div>
+  </div>
+  <div class="pull">
+    这个位置最大的红利不是租金，是<b>菜市场自带的日客流</b>；最大的风险也不是没客人，是<b>同栋楼十几家快餐在抢同一批人，而你卖的是要坐下来吃的一顿</b>。
+  </div>
+</div>
 
-  <div class="info-box">
-    <p><b>一句话判断：</b>这不是"商圈店"，是<b>长在菜市场和美食城楼里的社区店</b>。客流是现成的，但同栋楼里已经有十几家粉面快餐在抢同一批人——能不能活，取决于你敢不敢把"砂锅鸡 + 板烧鱼"做成别人做不了的那一顿。</p>
-    <div class="info-grid">
-      <div class="it"><div class="l">总面积 / 用餐</div><div class="v">200㎡ / 160㎡</div></div>
-      <div class="it"><div class="l">可摆桌</div><div class="v">约 18–22 桌</div></div>
-      <div class="it"><div class="l">四个品类</div><div class="v">粉面·戳子肉·板烧鱼·砂锅鸡</div></div>
-      <div class="it"><div class="l">建议人均</div><div class="v">午 20–26 / 晚 45–60</div></div>
+<!-- ================= 01 位置 ================= -->
+<div class="sec">
+  <div class="chap">
+    <span class="num">01</span>
+    <h2>这个位置是什么</h2>
+    <span class="sub">不是商圈店</span>
+  </div>
+  <p>把周边门店按地址拉了一遍，"和顺欣园16号楼"这一个地址下挂着十几家餐饮，还有"一楼菜市场""二层B区""金角264/258/265"这些门牌——这是<b>一个社区商业综合体</b>，不是普通底商。</p>
+
+  <div class="rings">
+    <div class="ring r3"><span class="tag">3KM · 军粮城核心</span></div>
+    <div class="ring r2"><span class="tag">1KM · 还迁社区</span></div>
+    <div class="ring r1"></div>
+    <div class="ring-core">
+      <div class="dot"></div>
+      <div class="nm">和顺欣园<br>16号楼 金角</div>
+    </div>
+    <div class="ring-note n-a">彩虹小镇商业广场<br>一层菜市场 + 二层美食城<br><b style="color:#b4572f">同栋楼 14 家餐饮</b></div>
+    <div class="ring-note n-b">和顺家园 1–4 区<br>家庭密度极高<br><b style="color:#b4572f">晚市主力</b></div>
+    <div class="ring-note n-c">尚河城 / 景怡道 / 金谷大街<br>尚渔味 549 条 · 街里香 203 条</div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <p style="margin-bottom:6px"><b>金角位</b> = 把角双展示面，是整个楼体最贵的广告位。</p>
+    <p style="margin-bottom:0">门头做不好，等于把最好的位置浪费了。<b>而现在，门头写的和卖的不是一回事。</b></p>
+  </div>
+
+  <div class="pull">
+    门头副标写"<b>砂锅 · 地锅 · 铁板 · 卤味</b>"，实际卖"<b>砂锅粉面 · 戳子肉 · 板烧鱼 · 砂锅鸡</b>"。<br>
+    顾客站门口猜不出来，进来又发现跟想的不一样——这是第一批差评的来源。地锅和卤味不卖，就别占门头。
+  </div>
+</div>
+
+<!-- ================= 02 竞品 ================= -->
+<div class="sec">
+  <div class="chap">
+    <span class="num">02</span>
+    <h2>对手分三圈，抢的不是同一种生意</h2>
+  </div>
+
+  <div class="bar-group-title">0 米 · 同栋楼 <span>抢午市快餐客</span></div>
+  <div class="bars">
+    <div class="bar-row"><div class="nm">螺蛳粉</div><div class="bar-track"><div class="bar-fill hot" style="width:100%"></div></div><div class="val">224 · 4.3</div></div>
+    <div class="bar-row"><div class="nm">老大同刀削面</div><div class="bar-track"><div class="bar-fill" style="width:12.5%"></div></div><div class="val">28 · 3.7</div></div>
+    <div class="bar-row"><div class="nm">麻辣香锅米线</div><div class="bar-track"><div class="bar-fill" style="width:5.4%"></div></div><div class="val">12 · 3.4</div></div>
+    <div class="bar-row"><div class="nm">姚记拉面</div><div class="bar-track"><div class="bar-fill" style="width:4.9%"></div></div><div class="val">11 · 3.5</div></div>
+    <div class="bar-row"><div class="nm">米典拌饭</div><div class="bar-track"><div class="bar-fill" style="width:2.7%"></div></div><div class="val">6 · 3.5</div></div>
+    <div class="bar-row"><div class="nm">其余档口</div><div class="bar-track"><div class="bar-fill" style="width:1.3%"></div></div><div class="val">0–3</div></div>
+  </div>
+
+  <div class="bar-group-title">1 公里 · 还迁社区 <span>抢晚市家庭客</span></div>
+  <div class="bars">
+    <div class="bar-row"><div class="nm">锦州烧烤</div><div class="bar-track"><div class="bar-fill hot" style="width:54.5%"></div></div><div class="val">122 · 3.8</div></div>
+    <div class="bar-row"><div class="nm">恩来顺火锅</div><div class="bar-track"><div class="bar-fill hot" style="width:33.5%"></div></div><div class="val">75 · 3.8</div></div>
+    <div class="bar-row"><div class="nm">憨大顺自助烤肉</div><div class="bar-track"><div class="bar-fill mid" style="width:17%"></div></div><div class="val">38 · 3.7</div></div>
+    <div class="bar-row"><div class="nm">渔民小镇</div><div class="bar-track"><div class="bar-fill mid" style="width:14.7%"></div></div><div class="val">33 · 3.7</div></div>
+    <div class="bar-row"><div class="nm">大姐家铁锅炖</div><div class="bar-track"><div class="bar-fill mid" style="width:8.9%"></div></div><div class="val">20 · 3.8</div></div>
+    <div class="bar-row"><div class="nm">福海烧烤家常菜</div><div class="bar-track"><div class="bar-fill mid" style="width:5.8%"></div></div><div class="val">13 · 3.2</div></div>
+  </div>
+
+  <div class="bar-group-title">3 公里 · 军粮城核心 <span>抢"专门去吃"的客</span></div>
+  <div class="bars">
+    <div class="bar-row"><div class="nm">尚渔味烤鱼</div><div class="bar-track"><div class="bar-fill hot" style="width:100%"></div></div><div class="val">549 · 3.7</div></div>
+    <div class="bar-row"><div class="nm">街里香铁锅炖</div><div class="bar-track"><div class="bar-fill" style="width:37%"></div></div><div class="val">203 · 4.0</div></div>
+    <div class="bar-row"><div class="nm">淼泽烤肉</div><div class="bar-track"><div class="bar-fill" style="width:14.4%"></div></div><div class="val">79 · 3.6</div></div>
+    <div class="bar-row"><div class="nm">博宇火锅鸡</div><div class="bar-track"><div class="bar-fill hot" style="width:13.3%"></div></div><div class="val">73 · 4.4</div></div>
+    <div class="bar-row"><div class="nm">齐齐哈尔烤肉</div><div class="bar-track"><div class="bar-fill" style="width:10.7%"></div></div><div class="val">59 · 3.8</div></div>
+  </div>
+
+  <p class="muted" style="margin-top:10px">条长 = 评价数；数字后为评分。数据取自海鸥系统军粮城商圈实测。</p>
+
+  <div class="card dark" style="margin-top:14px">
+    <p style="margin-bottom:6px"><b>三个结论：</b></p>
+    <p style="margin-bottom:4px">① 午市的对手是人均 12–29 的档口，不是尚渔味。</p>
+    <p style="margin-bottom:4px">② 晚市的对手是锦州烧烤（3.8/122）和恩来顺（3.8/75/人均74），就在你家门口。</p>
+    <p style="margin-bottom:0">③ 板烧鱼要打的对手有 549 条评价。你不能是"另一家烤鱼"，得是"营地现烧 + 砂锅鸡一桌两吃"。</p>
+  </div>
+</div>
+
+<!-- ================= 03 客群 ================= -->
+<div class="sec">
+  <div class="chap">
+    <span class="num">03</span>
+    <h2>两批人，两个生意</h2>
+    <span class="sub">核心判断</span>
+  </div>
+
+  <p><b>午市和晚市，几乎不是同一批人。</b>一套菜单、一套价格，必然有一头别扭。</p>
+
+  <div class="mix">
+    <div style="width:33%;background:#4a6b4f">菜场买菜</div>
+    <div style="width:23%;background:#7d9a72">年轻/打工</div>
+    <div style="width:8%;background:#b9a86a">学生</div>
+    <div style="width:7%;background:#c9b98a">工人</div>
+    <div style="width:29%;background:#b4572f">社区家庭</div>
+  </div>
+  <p class="muted" style="margin-bottom:14px">前四类偏午市，最后一类偏晚市与周末</p>
+
+  <div class="hours">
+    <div class="h lv1"></div><div class="h lv2"></div><div class="h lv3"></div><div class="h lv4"></div>
+    <div class="h lv5"></div><div class="h lv5"></div><div class="h lv3"></div><div class="h lv1"></div>
+    <div class="h lv1"></div><div class="h lv2"></div><div class="h lv4"></div><div class="h lv4"></div>
+  </div>
+  <div class="hour-lab">
+    <div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div>
+    <div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div>
+  </div>
+  <div class="legend">
+    <span><i style="background:#4a6b4f"></i>午市高峰 11–13</span>
+    <span><i style="background:#d4693c"></i>晚市高峰 17:30–20:30</span>
+    <span><i style="background:#dfd8c1"></i>13:30–16:30 低谷</span>
+  </div>
+
+  <div class="pull" style="margin-top:18px">
+    所以必须<b>分区 + 分菜单</b>：靠门明档只卖粉面快餐，里侧卡座才上锅和鱼。客人一进门，服务员第一句话就是分流。
+  </div>
+</div>
+
+<!-- ================= 04 品类定价 ================= -->
+<div class="sec">
+  <div class="chap">
+    <span class="num">04</span>
+    <h2>四个品类，四种角色</h2>
+  </div>
+
+  <div class="quad">
+    <div class="cross-h"></div><div class="cross-v"></div>
+    <div class="ax ax-y">客单贡献 ↑</div>
+    <div class="ax ax-x">毛利率 →</div>
+    <div class="pt" style="left:22%;top:20%"><div class="dot" style="background:#b4572f"></div><div class="nm">板烧鱼</div><div class="sm">78–108</div></div>
+    <div class="pt" style="left:60%;top:26%"><div class="dot" style="background:#3c5a44"></div><div class="nm">砂锅鸡</div><div class="sm">68–118</div></div>
+    <div class="pt" style="left:30%;top:56%"><div class="dot" style="background:#8a8455"></div><div class="nm">戳子肉</div><div class="sm">38–68</div></div>
+    <div class="pt" style="left:80%;top:74%"><div class="dot" style="background:#3c5a44"></div><div class="nm">砂锅粉面</div><div class="sm">16–26</div></div>
+    <div class="pt" style="left:74%;top:44%"><div class="dot" style="background:#8a8455"></div><div class="nm">凉菜卤味</div><div class="sm">8–28</div></div>
+  </div>
+  <p class="muted">横轴毛利由低到高，纵轴对客单的拉动由低到高。板烧鱼毛利最低但撑客单，粉面毛利最高但拉不动客单。</p>
+
+  <div class="pull">
+    四个品类不能用同一个毛利逻辑定价。<b>粉面是现金流，板烧鱼是记忆点，砂锅鸡是招牌，戳子肉是加菜。</b>
+  </div>
+
+  <div class="price-axis">
+    <div class="pa-line"></div>
+    <div class="pa-pt" style="left:8%"><div class="b"></div><div class="t">同栋楼快餐</div><div class="p">12–29</div></div>
+    <div class="pa-pt" style="left:30%"><div class="b"></div><div class="t">你的粉面</div><div class="p">16–26</div></div>
+    <div class="pa-pt hi" style="left:56%"><div class="b"></div><div class="t">你的锅物</div><div class="p">68–118</div></div>
+    <div class="pa-pt hi" style="left:76%"><div class="b"></div><div class="t">片区聚餐带</div><div class="p">63–74</div></div>
+    <div class="pa-pt" style="left:93%"><div class="b"></div><div class="t">极木烧烤</div><div class="p">97</div></div>
+  </div>
+
+  <div class="card dark">
+    <p style="margin-bottom:8px"><b>四条死线</b></p>
+    <p style="margin-bottom:5px">① 粉面不过 26。同栋楼麻辣烫 12、拉面 14，定 30 以上菜场客流直接走。</p>
+    <p style="margin-bottom:5px">② 砂锅鸡整只不过 118。恩来顺人均 74、锦州烧烤 65，一桌 3 人点整只鸡加两个菜就 200+，超了会被比价。</p>
+    <p style="margin-bottom:5px">③ 板烧鱼按份卖，绝不按斤。按斤称重是社区店差评第一杀手。</p>
+    <p style="margin-bottom:0">④ 米饭免费续要保住。门头已经承诺，一碗饭成本 5 毛，口碑值这个钱。</p>
+  </div>
+
+  <p style="margin-top:14px"><b>日流水结构性测算（非承诺）：</b>保守 2600–3200 ｜ 正常 3500–4500 ｜ 理想 5000–6000。月流水对应 7.8–18 万。</p>
+</div>
+
+<!-- ================= 05 系统 ================= -->
+<div class="sec">
+  <div class="chap">
+    <span class="num">05</span>
+    <h2>系统：该上智能版，但只用六成能力</h2>
+  </div>
+
+  <p>真实理由不是功能多，是<b>四个出餐口不出错</b>。青春版的分单能力撑不住这个结构。</p>
+
+  <div class="flow">
+    <div class="order">一张单进来 · 桌贴扫码或收银机下单</div>
+    <div class="arrow">↓ 自动拆单 ↓</div>
+    <div class="outs">
+      <div class="out"><div class="o1">粉面档</div><div class="o2">粉面 + 凉菜</div></div>
+      <div class="out"><div class="o1">铁板档</div><div class="o2">戳子肉 + 板烧鱼</div></div>
+      <div class="out"><div class="o1">砂锅档</div><div class="o2">砂锅鸡</div></div>
+    </div>
+  </div>
+
+  <p><b>顾客自助点单怎么实现？</b>桌贴二维码，顾客用自己手机扫，走手机点餐 / 商家小程序——<b>零硬件成本</b>。美团在售硬件里没有"自助点餐屏"这个型号，别被这个词带偏。</p>
+
+  <div class="hw">
+    <div class="row"><span class="qty">1</span><span class="what">收银一体机（建议双屏）<small>主屏店员、副屏顾客看价，菜场客流更放心</small></span></div>
+    <div class="row"><span class="qty">3</span><span class="what">后厨打印机<small>粉面档 / 铁板档 / 砂锅档各一台</small></span></div>
+    <div class="row"><span class="qty">22</span><span class="what">桌贴二维码<small>每桌一张，防水贴</small></span></div>
+    <div class="row"><span class="qty">1</span><span class="what">扫码枪 + 钱箱 + 小票机<small>基础配件</small></span></div>
+    <div class="row no"><span class="qty">—</span><span class="what">称重秤（不买）<small>板烧鱼按份卖不按斤</small></span></div>
+    <div class="row no"><span class="qty">—</span><span class="what">自助点餐屏（无此型号）<small>用桌贴码代替</small></span></div>
+  </div>
+
+  <div class="card">
+    <p style="margin-bottom:4px"><b>上线节奏</b></p>
+    <p style="margin-bottom:0">D-14 安装 → D-12 菜品录入 + 档口绑定 → D-10 到 D-8 员工练单 3 天 → D-5 试营业跑真单 → 开业。<br>
+    菜品录入五项必须一次对：<b>品名、规格、加料、可否打包、走哪个档口</b>。错一个，开业当天就乱。</p>
+  </div>
+</div>
+
+<!-- ================= 06 营地风视觉 ================= -->
+<div class="sec">
+  <div class="chap">
+    <span class="num">06</span>
+    <h2>营地风不是装修风格，是视觉标准</h2>
+    <span class="sub">新增</span>
+  </div>
+
+  <p>"营地风"如果只停在形容词，施工队和软装老板会各自理解成不同的东西。<b>先定标准，再谈效果。</b></p>
+
+  <div class="bar-group-title">色板 · 只用这五色</div>
+  <div class="palette">
+    <div class="sw" style="background:#16241c"><span>深林绿</span></div>
+    <div class="sw" style="background:#3c5a44"><span>苔藓绿</span></div>
+    <div class="sw" style="background:#8a6a44"><span>老木色</span></div>
+    <div class="sw" style="background:#f7f2e4"><span>米白</span></div>
+    <div class="sw" style="background:#d4693c"><span>篝火橘</span></div>
+  </div>
+  <p class="muted">禁用：大红、亮黄、荧光色、渐变幻彩。营地感来自"低饱和 + 暖光"，不是来自彩灯。</p>
+
+  <div class="bar-group-title">灯光 · 三层，缺一层就不像营地</div>
+  <div class="light">
+    <div class="l"><div class="t">顶层串灯</div><div class="d">门头 + 顶棚，2700K 暖白，间距 40–50cm，必须能整片点亮</div></div>
+    <div class="l"><div class="t">桌边暖光</div><div class="d">每桌一盏小营地灯或烛杯，亮度只够照亮桌面</div></div>
+    <div class="l"><div class="t">明档聚光</div><div class="d">砂锅位上方的射灯，把"咕嘟"照出来，这是内容素材源</div></div>
+  </div>
+
+  <div class="bar-group-title">三个打卡点 · 拍照即传播</div>
+  <div class="spots">
+    <div class="spot"><div class="idx">1</div><div><div class="t">金角门头夜景</div><div class="d">把角双面都要有字，串灯全亮。检验标准：<b>站在马路对面 30 米，能认出"野灶营地"四个字</b></div></div></div>
+    <div class="spot"><div class="idx">2</div><div><div class="t">明档砂锅位</div><div class="d">客人能看到砂锅开盖冒泡的位置，设 2–3 个高脚吧位，一个人也愿意坐</div></div></div>
+    <div class="spot"><div class="idx">3</div><div><div class="t">帐篷卡座</div><div class="d">1–2 个带白纱帐的卡座，是小红书/朋友圈唯一会主动拍的角落</div></div></div>
+  </div>
+
+  <div class="bar-group-title">软装预算怎么分</div>
+  <div class="alloc">
+    <div class="a-row"><div class="a-top"><span>木质桌椅与旧木台面</span><span class="pct">30%</span></div><div class="a-track"><div class="a-fill" style="width:30%"></div></div></div>
+    <div class="a-row"><div class="a-top"><span>帐篷 / 布幔 / 户外伞</span><span class="pct">25%</span></div><div class="a-track"><div class="a-fill" style="width:25%"></div></div></div>
+    <div class="a-row"><div class="a-top"><span>串灯与照明</span><span class="pct">15%</span></div><div class="a-track"><div class="a-fill" style="width:15%"></div></div></div>
+    <div class="a-row"><div class="a-top"><span>绿植 / 旧铁皮 / 装饰旧物</span><span class="pct">20%</span></div><div class="a-track"><div class="a-fill" style="width:20%"></div></div></div>
+    <div class="a-row"><div class="a-top"><span>指示牌与桌卡</span><span class="pct">10%</span></div><div class="a-track"><div class="a-fill" style="width:10%"></div></div></div>
+  </div>
+
+  <div class="card dark">
+    <p style="margin-bottom:0"><b>一条铁律：硬装不超过总投入五成。</b>200㎡ 硬装砸超了，回本周期直接拉长半年。营地感靠软装和灯光堆，不靠墙和顶。</p>
+  </div>
+</div>
+
+<!-- ================= 07 投流 ================= -->
+<div class="sec">
+  <div class="chap">
+    <span class="num">07</span>
+    <h2>什么时候投、投给谁</h2>
+  </div>
+
+  <div class="pull" style="margin-top:4px">
+    开业前 30 天，<b>一分钱都别投流</b>。瓶颈不是"没人知道"，是"没人评价"。花钱把没准备好的店推给更多人，只是让更多人看到评分是空的。
+  </div>
+
+  <div class="stage">
+    <div class="s on">
+      <div class="dot">1</div>
+      <div class="body">
+        <div class="h">建资产期 <em>0 元</em></div>
+        <div class="d">D-14 到 D+30。建店、12 张图、3 个套餐、抖音蓝V、社群、高德认领。<br>KPI 只有两个：<b>30 天 50 条真实评价、评分 ≥4.3</b></div>
+      </div>
+    </div>
+    <div class="s on">
+      <div class="dot">2</div>
+      <div class="body">
+        <div class="h">小额验证期 <em>1500–2500 / 月</em></div>
+        <div class="d">D+31 到 D+90。点评推广通只投 3km、只投 10:30–12:30 与 16:30–18:30，日预算 40–60；抖音本地推 3–5km，只推引流品。<br>考核线：<b>1 元广告带来 ≥3 元实收，达不到就停</b></div>
+      </div>
+    </div>
+    <div class="s">
+      <div class="dot">3</div>
+      <div class="body">
+        <div class="h">放大期 <em>按 ROI 定</em></div>
+        <div class="d">D+90 后。只放大算得清的，重点从"拉新"切到"复购"：私域券包 + 储值</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="matrix">
+    <div class="mx"><span class="st go">主战场</span><span class="nm">美团 / 点评</span><span class="ds">"附近吃什么"的决策场</span></div>
+    <div class="mx"><span class="st go">内容场</span><span class="nm">抖音</span><span class="ds">只上 1–2 个引流品</span></div>
+    <div class="mx"><span class="st go">复购引擎</span><span class="nm">微信社群</span><span class="ds">优先级高于付费流量</span></div>
+    <div class="mx"><span class="st go">兜底</span><span class="nm">高德 / 地图</span><span class="ds">认领 + 补图 + 写清门牌</span></div>
+    <div class="mx"><span class="st no">不做</span><span class="nm">小红书</span><span class="ds">军粮城不是内容目的地</span></div>
+    <div class="mx"><span class="st no">不做</span><span class="nm">快手</span><span class="ds">到店转化弱，客群错位</span></div>
+  </div>
+
+  <div class="card">
+    <p style="margin-bottom:5px"><b>人群怎么设：</b>以 16 号楼为圆心 3km、25–45 岁女性优先、有孩家庭、只投午晚市前 1.5 小时。</p>
+    <p style="margin-bottom:0"><b>三个不做：</b>不做 9.9 引流 · 不找达人探店 · 开业第一周不投流。</p>
+  </div>
+</div>
+
+<!-- ================= 08 执行力 ================= -->
+<div class="sec">
+  <div class="chap">
+    <span class="num">08</span>
+    <h2>人手不够怎么办：按三档做减法</h2>
+    <span class="sub">新增</span>
+  </div>
+
+  <p>方案最容易被高估的就是执行力。一家社区店同时推进门头改造、系统上线、菜单定稿、素材拍摄、社群拉新、评价管理——<b>现实里大概率落不了地</b>。所以先按人手定版本，别按理想定版本。</p>
+
+  <div class="tiers">
+    <div class="tier a">
+      <div class="h">A · 满配版 <span class="hl">后厨 3 人 + 前厅 2 人</span></div>
+      <div class="d">四个品类全上，板烧鱼按份卖。这是方案的目标状态，但只有 5 个人到位才成立。</div>
+    </div>
+    <div class="tier b">
+      <div class="h">B · 标准版 <span class="hl">4 人</span></div>
+      <div class="d"><b>砍掉板烧鱼</b>，保留粉面 + 戳子肉 + 砂锅鸡。板烧鱼是四品类里最吃人手、最吃时间的，砍它掉客单但不掉翻台。</div>
+    </div>
+    <div class="tier c">
+      <div class="h">C · 最低版 <span class="hl">3 人</span></div>
+      <div class="d">只做<b>砂锅粉面 + 砂锅鸡 + 凉菜</b>。先把午市跑通、把评价攒到 30 条，再往上加品。硬上四品类只会全线崩。</div>
     </div>
   </div>
 
   <div class="card">
-    <div class="chapter"><span class="no">!</span><span class="t">先改上一版的一个判断</span></div>
-    <p>上一版我写"军粮城线上几乎是空白"，<b>这句不准确，现在纠正</b>。实测这片区的线上并非空白，只是强弱极度分化：</p>
-    <div class="hl"><b>同栋楼里最猛的一家：</b>柳州肥姨妈大骨螺蛳粉（和顺欣园16号商场一层）<b>4.3 分 / 224 条 / 人均 29</b>。<br><b>社区烧烤第一：</b>锦州烧烤（和顺家园店）<b>3.8 / 122 条 / 人均 65</b>。<br><b>同楼聚餐类第一：</b>恩来顺火锅（16号楼102）<b>3.8 / 75 条 / 人均 74</b>。</div>
-    <p>这不影响结论，但改变了打法：<b>你的目标不是"从 0 做到片区第一"，而是"在已有的线上竞争里，把评分和评价数做到同楼前二"。</b>螺蛳粉 4.3 分摆在那，说明这片客人是会给好评的。</p>
+    <p style="margin-bottom:6px"><b>前两周只死磕两件事：</b></p>
+    <p style="margin-bottom:6px">① 出餐时间稳定（粉面 10 分钟、锅物 25 分钟内）</p>
+    <p style="margin-bottom:0">② 拿到第一批真实评价（首周累计 20 条，不是当天 20 条）<br>其余动作——社群、邻居联动、储值、投流——<b>全部往后放</b>。</p>
   </div>
 
-  <div class="card">
-    <div class="chapter"><span class="no">1</span><span class="t">位置真相 · 16号楼到底是什么</span></div>
-    <p>把周边门店按地址拉了一遍，"和顺欣园16号楼"这一个地址下挂着十几家餐饮，还有"一楼菜市场""二层B区""金角商业用房264/258/265"这些门牌——<b>这是军粮城新市镇的一个社区商业综合体</b>：一层菜市场 + 美食城档口，二层文禾美食城/和顺园美食城，外面是彩虹小镇商业广场。</p>
-    <table>
-      <tr><th style="width:32%">位置属性</th><th>意味着什么</th></tr>
-      <tr><td><b>金角位</b></td><td><b>把角双展示面</b>，是整个楼体最贵的广告位。门头做不好，等于把最好的位置浪费了</td></tr>
-      <tr><td><b>一层菜市场</b></td><td>每天上午到中午有<b>稳定买菜人流</b>，中老年 + 家庭主妇为主，价格敏感</td></tr>
-      <tr><td><b>二层美食城</b></td><td>十几家粉面/麻辣烫/盒饭/<b>人均 11–29</b>，中午抢的是同一批快餐客</td></tr>
-      <tr><td><b>和顺家园 1–4 区</b></td><td>还迁安置区，<b>家庭密度极高</b>，晚饭和周末的主力来源</td></tr>
-      <tr><td><b>彩虹小镇商业广场</b></td><td>片区唯一成型的商业体，自带"逛街+吃饭"场景</td></tr>
-    </table>
-    <div class="warn"><b>必须纠正的硬伤：</b>门头副标写"砂锅·地锅·铁板·卤味"，实际卖"砂锅粉面·戳子肉·板烧鱼·砂锅鸡"。<b>地锅和卤味不卖，就别占门头。</b>建议副标直接改成：砂锅粉面 · 戳子肉 · 板烧鱼 · 砂锅鸡。这个位置是金角，一天几千人从门口过，写错一天亏一天。</div>
+  <div class="card dark">
+    <p style="margin-bottom:6px"><b>谁来做，写清楚：</b></p>
+    <p style="margin-bottom:4px">老板：门头、菜单定价、后厨出品、每天拍一条素材</p>
+    <p style="margin-bottom:4px">老板娘/店长：社群、评价引导、储值、每天记三个数</p>
+    <p style="margin-bottom:0">你（BD）：系统上线、建店上单、团购配置、开业活动、第一个月的线上运营陪跑</p>
+  </div>
+</div>
+
+<!-- ================= 09 时间轴 ================= -->
+<div class="sec">
+  <div class="chap">
+    <span class="num">09</span>
+    <h2>从今天到第 90 天</h2>
   </div>
 
-  <div class="card">
-    <div class="chapter"><span class="no">2</span><span class="t">基础系统方案 · 美团智能版收银</span></div>
-    <p>先说结论：<b>这家店该上智能版，但只需要用到它 60% 的能力</b>。四个品类、四个出餐口、两种业态（快餐 + 聚餐）在同一个 160㎡ 里跑，这才是必须上智能版的真实原因——不是功能多，是<b>不出错</b>。</p>
-    <p><b>为什么青春版不够用（三条硬理由）：</b></p>
-    <ul>
-      <li><b>多档口分单</b>：粉面档、铁板档（戳子肉 + 板烧鱼）、砂锅档、凉菜卤味档，一单要拆到 2–3 个口。青春版分单能力弱，靠喊单，午市必出错</li>
-      <li><b>双平台核销</b>：美团团购 + 抖音团购券要能在同一台收银机上核，还要能区分"堂食券/外卖券/储值券"</li>
-      <li><b>分品类毛利报表</b>：四个品谁赚钱、谁是引流品，必须能从系统里拉出来，否则三个月后还是拍脑袋</li>
-    </ul>
-    <p><b>桌台与分区设计（照这个配）：</b></p>
-    <table>
-      <tr><th style="width:30%">区域</th><th>桌型</th><th>用途</th></tr>
-      <tr><td>A 区 靠门/明档</td><td>8–10 张 2 人小桌</td><td>一人食粉面、菜场客流、翻台主力</td></tr>
-      <tr><td>B 区 中间</td><td>6–8 张 4 人桌</td><td>家庭 3–4 人，戳子肉 + 砂锅鸡</td></tr>
-      <tr><td>C 区 里侧/帐篷卡座</td><td>3–4 张 6 人桌</td><td>聚餐、板烧鱼、生日小聚</td></tr>
-      <tr><td>D 区 明档口</td><td>吧台 4–6 位</td><td>看得到砂锅咕嘟的位置，最出片</td></tr>
-    </table>
-    <p><b>功能清单（按上线优先级，不用的别买）：</b></p>
-    <table>
-      <tr><th style="width:26%">功能</th><th style="width:14%">优先级</th><th>解决什么</th></tr>
-      <tr><td>扫码点餐 + 桌贴</td><td><span class="badge b-r">P0</span></td><td>2 个服务员管 20 桌，靠这个才转得开；同时省一个点单人力</td></tr>
-      <tr><td>多档口分单打印</td><td><span class="badge b-r">P0</span></td><td>一单拆三个口，不漏单不重做</td></tr>
-      <tr><td>团购核销（美团+抖音）</td><td><span class="badge b-r">P0</span></td><td>开业当天就要用，没这个券全废</td></tr>
-      <tr><td>加菜/加料/加价购</td><td><span class="badge b-r">P0</span></td><td>加面、加浇头、加一份戳子肉、米饭续——人均靠这个提 5–8 元</td></tr>
-      <tr><td>会员储值 + 券包</td><td><span class="badge b-y">P1</span></td><td>社区店复购命脉，第 2 个月开始用</td></tr>
-      <tr><td>沽清/限量</td><td><span class="badge b-y">P1</span></td><td>砂锅鸡、板烧鱼限量卖，卖完停售，防超卖</td></tr>
-      <tr><td>分品类报表</td><td><span class="badge b-y">P1</span></td><td>四品类毛利必须有数</td></tr>
-      <tr><td>美团外卖对接</td><td><span class="badge b-y">P1</span></td><td>只上粉面和凉菜，锅物和鱼不上外卖</td></tr>
-      <tr><td>KDS 后厨屏</td><td><span class="badge b-g">P2</span></td><td>出餐口多、单量大再上，前期纸质够</td></tr>
-      <tr><td>称重/秤</td><td><span class="badge b-g">不用</span></td><td>板烧鱼按份卖不按斤，规避称重纠纷</td></tr>
-    </table>
-    <p><b>硬件配置（保守够用版）：</b></p>
-    <ul>
-      <li>收银一体机 1 台（放金角吧台，双屏，客显能看价格）</li>
-      <li>后厨打印机 <b>3 台</b>：粉面档 1、铁板档 1、砂锅档 1（凉菜卤味走粉面档那台）</li>
-      <li>扫码枪 1 把、钱箱 1 个、小票机 1 台</li>
-      <li>桌贴二维码 22 张（每桌一张，防水贴）</li>
-      <li>可选：自助点餐屏 1 台（菜场客流上手更快，但前期扫码够了）</li>
-    </ul>
-    <div class="hl"><b>上线节奏（别在开业前一天装）：</b><br>签约 → 安装（D-14）→ 菜品录入 + 档口绑定（D-12）→ 员工练单 3 天（D-10 到 D-8）→ 试营业跑真单（D-5）→ 开业。菜品录入必须<b>一次录对</b>：品名、规格、加料、是否可打包、走哪个档口，这五项错一个，开业当天就乱。</div>
-    <p class="muted">注：具体版本能力与报价以你手上的产品政策为准，这里只给"该用哪些能力"的判断，不做价格承诺。</p>
+  <div class="tl">
+    <div class="n key">
+      <div class="when">D-14 到 D-8</div>
+      <div class="what">改门头副标 · 定菜单 · 装系统</div>
+      <div class="how">SKU 压到 22 个内；菜品录入五项一次对；员工练单 3 天</div>
+    </div>
+    <div class="n">
+      <div class="when">D-14 到 D-7</div>
+      <div class="what">拍四条素材 · 拉两个群</div>
+      <div class="how">门头夜景、砂锅开盖、铁板下肉、老板熬汤背影；群目标 300 人</div>
+    </div>
+    <div class="n">
+      <div class="when">D-7 到 D-1</div>
+      <div class="what">建店上套餐 · 卖尝鲜券</div>
+      <div class="how">19.9 单人粉面（限午市）/ 88 双人砂锅鸡 / 158 三人板烧鱼；券卖 40–50 张，不追 60</div>
+    </div>
+    <div class="n key">
+      <div class="when">D1 到 D7</div>
+      <div class="what">开业周：不做全场折扣</div>
+      <div class="how">吃到一半引导评价，别等结账；菜场出口摆易拉宝发券；每天记三个数</div>
+    </div>
+    <div class="n">
+      <div class="when">W2 到 W4</div>
+      <div class="what">储值 · 老带新 · 固定内容节奏</div>
+      <div class="how">首充 100 送 20；每周三"今日骨汤"、每周五"周末砂锅鸡限量 20 只"</div>
+    </div>
+    <div class="n">
+      <div class="when">M2 到 M3</div>
+      <div class="what">砍品 · 小额投流 · 午市转晚市</div>
+      <div class="how">连续两周销量后 3 名下架；午市发晚市券（满 100 减 20，17:30 后）</div>
+    </div>
   </div>
 
-  <div class="card">
-    <div class="chapter"><span class="no">3</span><span class="t">竞品分析 · 三个圈层，对手不是同一批</span></div>
-    <p>把距离分三圈看，因为<b>不同距离的对手抢的是不同的生意</b>。</p>
-    <p><b>第一圈 · 同栋楼 0 米（抢午市快餐客）</b></p>
-    <table>
-      <tr><th style="width:44%">门店</th><th style="width:18%">评分/评价</th><th>人均</th></tr>
-      <tr><td>柳州肥姨妈大骨螺蛳粉</td><td><b>4.3 / 224</b></td><td>29</td></tr>
-      <tr><td>圆圆麻辣香锅麻辣烫米线</td><td>3.4 / 12</td><td>16</td></tr>
-      <tr><td>张敬麻辣烫</td><td>3.4 / 3</td><td>12</td></tr>
-      <tr><td>米典拌饭</td><td>3.5 / 6</td><td>24</td></tr>
-      <tr><td>姚记二号路拉面</td><td>3.5 / 11</td><td>14</td></tr>
-      <tr><td>老大同刀削面（16号楼）</td><td>3.7 / 28</td><td>22</td></tr>
-      <tr><td>各类盒饭/猪脚饭/拌饭档口</td><td>多数 0 评价</td><td>12–22</td></tr>
-    </table>
-    <div class="hl"><b>看清一件事：</b>同栋楼快餐只有螺蛳粉一家跑出来了（4.3 分 224 条），其余全是 3.4–3.7 分、几十条甚至 0 条。<b>不是没客流，是没人把线上当回事。</b>你的砂锅粉面只要做到 <b>4.2 分以上</b>，在这栋楼就是快餐第一梯队。</div>
-    <p><b>第二圈 · 社区 1km 内（抢晚市家庭客）</b></p>
-    <table>
-      <tr><th style="width:40%">门店</th><th style="width:20%">评分/评价</th><th>人均</th></tr>
-      <tr><td><b>锦州烧烤（和顺家园店）</b></td><td><b>3.8 / 122</b></td><td>65</td></tr>
-      <tr><td>恩来顺火锅（16号楼102）</td><td>3.8 / 75</td><td>74</td></tr>
-      <tr><td>憨大顺自助烤肉</td><td>3.7 / 38</td><td>67</td></tr>
-      <tr><td>渔民小镇（和顺一区）</td><td>3.7 / 33</td><td>63</td></tr>
-      <tr><td>大姐家铁锅炖炖大鹅</td><td>3.8 / 20</td><td>65</td></tr>
-      <tr><td>极木烧烤</td><td>3.4 / 18</td><td>97</td></tr>
-      <tr><td>福海烧烤家常菜（16号楼D区）</td><td>3.2 / 13</td><td>42</td></tr>
-      <tr><td>屋头串串（16号楼二层）</td><td>3.8 / 16（已关）</td><td>67</td></tr>
-    </table>
-    <p><b>第三圈 · 军粮城核心 2–3km（抢"专门去吃"的客）</b></p>
-    <table>
-      <tr><th style="width:40%">门店</th><th style="width:20%">评分/评价</th><th>人均</th></tr>
-      <tr><td>尚渔味双拼烤鱼（尚河城）</td><td><b>3.7 / 549</b></td><td>61</td></tr>
-      <tr><td>街里香铁锅炖</td><td><b>4.0 / 203</b></td><td>63</td></tr>
-      <tr><td>博宇老沧州火锅鸡</td><td><b>4.4 / 73</b></td><td>63</td></tr>
-      <tr><td>淼泽烤肉</td><td>3.6 / 79</td><td>66</td></tr>
-      <tr><td>齐齐哈尔家庭烤肉</td><td>3.8 / 59</td><td>64</td></tr>
-      <tr><td>四阿哥铁锅炖</td><td>3.7 / 48</td><td>91</td></tr>
-    </table>
-    <div class="warn"><b>最该警惕的一个对手：尚渔味烤鱼。</b>549 条评价、人均 61，就在军粮城核心的尚河城——它已经把"吃烤鱼去尚渔味"这个心智占住了。你的板烧鱼如果只是"另一家烤鱼"，很难赢。<b>打法必须差异化：他们卖"双拼烤鱼"（选择多），你卖"营地现烧 + 砂锅鸡同桌"（场景感 + 一桌两吃）。</b></div>
-    <p><b>三圈看完的结论：</b></p>
-    <ul>
-      <li>午市真正的对手是<b>同栋楼人均 12–29 的快餐档口 + 螺蛳粉</b>，不是尚渔味</li>
-      <li>晚市真正的对手是<b>锦州烧烤和恩来顺火锅</b>，人均 65–74，就在你家门口</li>
-      <li>板烧鱼要打的是<b>尚渔味的"下次专门去"</b>，靠的是把"营地 + 砂锅"做成记忆点，不是拼价格</li>
-      <li>片区价格天花板很清楚：<b>聚餐类人均 63–74</b>，你没有空间定到 80 以上</li>
-    </ul>
+  <div class="card dark">
+    <p style="margin-bottom:6px"><b>90 天只看三个数</b></p>
+    <p style="margin-bottom:4px">① 评分 ≥ 4.3 —— 超过同栋楼除螺蛳粉外所有店</p>
+    <p style="margin-bottom:4px">② 晚市桌均 ≥ 130 —— 说明锅和鱼卖动了</p>
+    <p style="margin-bottom:0">③ 储值会员 ≥ 100 人 —— 说明社区关系建立了</p>
   </div>
+</div>
 
-  <div class="card">
-    <div class="chapter"><span class="no">4</span><span class="t">客群画像 · 五类人，五个时段</span></div>
-    <table>
-      <tr><th style="width:30%">客群</th><th style="width:26%">占比估算</th><th>特征与打法</th></tr>
-      <tr><td><b>菜场买菜人群</b></td><td>午市 30–35%</td><td>中老年 + 家庭主妇，价格敏感，看"米饭免费续""现熬骨汤"。<b>要出 16–20 元的一人食</b>，出餐 10 分钟内</td></tr>
-      <tr><td><b>和顺家园/欣园家庭</b></td><td>晚市 40–45%</td><td>还迁安置区，一家三代同住，<b>3–5 人聚餐是主力</b>，人均 45–60 接受度最高</td></tr>
-      <tr><td><b>美食城年轻租户/周边打工</b></td><td>午市 20–25%</td><td>18–35 岁，要快、要饱、要便宜，<b>15–22 元是硬线</b>，看分量不看环境</td></tr>
-      <tr><td><b>军粮城中学学生/家长</b></td><td>午晚各 5–10%</td><td>放学时段集中，偏好粉面、戳子肉小份，<b>不能上酒类陈列</b></td></tr>
-      <tr><td><b>钢材城/物流园工人</b></td><td>午市 5–10%</td><td>约 3–4km 外，<b>只有"量大管饱 + 停车方便"才来</b>，别为他们改产品</td></tr>
-    </table>
-    <p><b>时段结构（决定你几点该有人、几点该省人）：</b></p>
-    <table>
-      <tr><th style="width:26%">时段</th><th style="width:24%">客流</th><th>主推</th></tr>
-      <tr><td>06:30–10:00</td><td>菜场早市，非餐饮</td><td>不建议做早餐，先把午晚跑通</td></tr>
-      <tr><td>11:00–13:30</td><td><b>全天第一高峰</b></td><td>砂锅粉面 + 戳子肉小份，翻台要快</td></tr>
-      <tr><td>13:30–16:30</td><td>低谷（≤3 桌）</td><td>备料、拍内容、做社群、员工吃饭</td></tr>
-      <tr><td>17:30–20:30</td><td><b>客单最高峰</b></td><td>砂锅鸡 + 板烧鱼 + 戳子肉，桌均 130–200</td></tr>
-      <tr><td>20:30–22:00</td><td>夜宵尾段</td><td>戳子肉 + 卤味 + 酒水，做第二波</td></tr>
-    </table>
-    <div class="hl"><b>一个必须想清的问题：</b>午市来的人（买菜的、打工的、学生）和晚市来的人（家庭聚餐）<b>几乎不是同一批人</b>。这意味着一套菜单、一套话术、一套价格，必然有一头别扭。<b>正确做法是分区 + 分菜单：A 区只卖粉面快餐，B/C 区才上锅和鱼。</b>客人一进门，服务员第一句话就是分流。</div>
+<!-- ================= 10 坑 ================= -->
+<div class="sec">
+  <div class="chap">
+    <span class="num">10</span>
+    <h2>四个必须避开的坑</h2>
   </div>
+  <div class="pit"><div class="no">01</div><div class="c"><div class="t">四品类四出餐口，人手不够就是灾难</div><div class="d">粉面 10 分钟、戳子肉 10–12、砂锅鸡与板烧鱼 20–25。5 人才转得开，少于 4 人先砍板烧鱼。</div></div></div>
+  <div class="pit"><div class="no">02</div><div class="c"><div class="t">"现熬骨汤"如果不真熬，会反噬</div><div class="d">写了就要每天拍、每周发。这是社区店最值钱的信任状，也是最快被拆穿的谎。</div></div></div>
+  <div class="pit"><div class="no">03</div><div class="c"><div class="t">营地风别砸钱在硬装</div><div class="d">硬装超总投入五成，回本周期拉长半年。营地感靠串灯、布幔、木桌、旧物，几万块能出效果。</div></div></div>
+  <div class="pit"><div class="no">04</div><div class="c"><div class="t">别跟同栋楼快餐档口打价格战</div><div class="d">他们人均 12–22、没有堂食成本、夫妻两人干。你 200㎡ 摆 20 桌，成本结构完全不同。战场在晚上。</div></div></div>
+</div>
 
-  <div class="card">
-    <div class="chapter"><span class="no">5</span><span class="t">品类与定价 · 毛利和售价</span></div>
-    <p>四个品的角色完全不同，<b>不能用同一个毛利逻辑定价</b>。</p>
-    <table>
-      <tr><th style="width:22%">品类</th><th style="width:18%">角色</th><th style="width:20%">成本占比</th><th>建议售价</th></tr>
-      <tr><td><b>砂锅粉面</b></td><td>现金流</td><td>食材 30–35%</td><td>素 16–18 / 加浇头 22–26</td></tr>
-      <tr><td><b>戳子肉</b></td><td>下酒 + 加菜</td><td>食材 38–42%</td><td>小份 38–42 / 大份 58–68</td></tr>
-      <tr><td><b>板烧鱼</b></td><td>拉客单 + 记忆点</td><td>食材 42–48%</td><td><b>按份 78–108</b>（2.5–3 斤），不按斤</td></tr>
-      <tr><td><b>营地砂锅鸡</b></td><td>招牌</td><td>食材 38–42%</td><td>半只 68–78 / 整只 98–118</td></tr>
-      <tr><td><b>凉菜卤味</b></td><td>利润补位</td><td>食材 28–32%</td><td>凉菜 8–16 / 卤味 18–28</td></tr>
-    </table>
-    <p><b>综合毛利测算（结构性参考，不是承诺）：</b></p>
-    <table>
-      <tr><th style="width:34%">项目</th><th>数值</th></tr>
-      <tr><td>综合毛利率</td><td><b>60–63%</b>（粉面拉高，板烧鱼拉低）</td></tr>
-      <tr><td>午市客单</td><td>20–26 元 / 人</td></tr>
-      <tr><td>晚市客单</td><td>45–60 元 / 人（2–3 人桌均 130–180）</td></tr>
-      <tr><td>综合人均</td><td>36–44 元</td></tr>
-      <tr><td>午市单量</td><td>40–60 单</td></tr>
-      <tr><td>晚市桌数</td><td>15–25 桌</td></tr>
-      <tr><td>日流水</td><td>保守 2600–3200 / 正常 3500–4500 / 理想 5000–6000</td></tr>
-      <tr><td>月流水</td><td>保守 7.8–9.6 万 / 正常 10.5–13.5 万 / 理想 15–18 万</td></tr>
-    </table>
-    <p><b>定价必须守住的四条线：</b></p>
-    <ul>
-      <li><b>粉面不超过 26。</b>同栋楼麻辣烫 12、拉面 14、刀削面 22，螺蛳粉 29 是"有品牌感"的特例。你定 30 以上，菜场客流直接走</li>
-      <li><b>砂锅鸡整只别过 118。</b>恩来顺人均 74、锦州烧烤 65，一桌 3 人点整只鸡 + 两个菜就 200+，超了会被比价</li>
-      <li><b>板烧鱼按份卖，绝不按斤。</b>按斤称重是社区店差评第一杀手（"说 3 斤上来没几块"）。定死"一份 2.5–3 斤、78/88/108 三档"</li>
-      <li><b>米饭免费续要保住。</b>这是门头已经承诺的信任状，一碗饭成本 0.5 元，换来的口碑远大于成本</li>
-    </ul>
-    <div class="hl"><b>组合设计（直接影响人均）：</b><br>午市：粉面 + 1 元加卤蛋 / 3 元加一份戳子肉碎<br>晚市 2 人：砂锅鸡半只 + 粉面 1 份 + 凉菜 1 = 约 110<br>晚市 3–4 人：板烧鱼 + 砂锅鸡半只 + 戳子肉小份 + 凉菜 2 = 约 200–240<br>夜宵：戳子肉大份 + 卤味 + 酒水 = 约 90</div>
+<!-- ================= 11 待确认 ================= -->
+<div class="sec">
+  <div class="chap">
+    <span class="num">11</span>
+    <h2>需要确认的五件事</h2>
   </div>
+  <div class="todo">
+    <div class="t"><span class="q">?</span><div>后厨几个人？<small>决定走 A/B/C 哪一档，板烧鱼上不上</small></div></div>
+    <div class="t"><span class="q">?</span><div>板烧鱼用活鱼还是冻品？<small>决定 78 还是 108 的定价</small></div></div>
+    <div class="t"><span class="q">?</span><div>卤味还做不做？<small>做就进菜单当利润品，不做就从门头拿掉</small></div></div>
+    <div class="t"><span class="q">?</span><div>有没有外卖打算？<small>只有粉面和凉菜适合，锅和鱼不上</small></div></div>
+    <div class="t"><span class="q">?</span><div>门头副标还能不能改？<small>这行字必须改，是最便宜的一次转化提升</small></div></div>
+  </div>
+  <p class="muted" style="margin-top:10px">另：「野灶营地」在海鸥系统查不到（野灶 / 营地 / 和顺欣园均无记录），<b>需要先建店才能上单、才能做线上</b>。你发的 1022783358114205 是「亮式邻炉烤肉」（滨海钢材城A座），与金角商业用房1090 不是同一地址。</p>
+</div>
 
-  <div class="card">
-    <div class="chapter"><span class="no">6</span><span class="t">线上投流与平台策略 · 什么时候投、投给谁</span></div>
-    <p>先给最硬的一句：<b>开业前 30 天，一分钱都别投流。</b>这家店的瓶颈不是"没人知道"，是"没人评价"。投流只会把没准备好的店，推给更多人看差评。</p>
-    <p><b>平台分工（先想清楚每个平台干什么）：</b></p>
-    <table>
-      <tr><th style="width:26%">平台</th><th style="width:22%">定位</th><th>怎么用</th></tr>
-      <tr><td><b>美团 / 大众点评</b></td><td><b>主战场</b><br>决策场</td><td>客人搜"军粮城 吃什么"就在这里决。必做：建店、精修图文、套餐、<b>评价机制</b>、买单优惠</td></tr>
-      <tr><td><b>抖音</b></td><td>内容场<br>引流场</td><td>营地风门头 + 砂锅咕嘟 + 铁板滋啦，<b>天然素材</b>。只上 1–2 个低价引流品，别把主菜上团购</td></tr>
-      <tr><td><b>微信社群/朋友圈</b></td><td><b>复购引擎</b></td><td>社区店的真正命脉。<b>优先级高于任何付费流量</b>，一个 300 人的群 = 每月 1–2 万复购</td></tr>
-      <tr><td><b>高德/地图</b></td><td>兜底</td><td>认领门店、补照片、写清"16号楼金角"，很多人是从导航找过来的</td></tr>
-      <tr><td><b>小红书</b></td><td><b>不做</b></td><td>军粮城不是内容目的地，没有"专门来打卡"的场景，投了也是打水漂</td></tr>
-      <tr><td><b>快手</b></td><td><b>不做</b></td><td>天津下沉有量，但餐饮到店转化弱，且客群和"家庭聚餐"错位</td></tr>
-    </table>
-    <p><b>三阶段节奏（照这个走，别提前）：</b></p>
-    <table>
-      <tr><th style="width:22%">阶段</th><th style="width:22%">预算</th><th>做什么</th></tr>
-      <tr><td><b>D-14 到 D+30</b><br>建资产期</td><td><b>0 元</b></td><td>点评/美团建店 + 精修 12 张图 + 3 个套餐上架 + 抖音蓝V + 3 条短视频（不投流）+ 社群建起来 + 高德认领。<b>唯一 KPI：30 天内 50 条真实评价、评分 ≥4.3</b></td></tr>
-      <tr><td><b>D+31 到 D+90</b><br>小额验证期</td><td><b>1500–2500 / 月</b></td><td>点评"推广通"只投 <b>3km 内</b>、只投 <b>10:30–12:30 和 16:30–18:30</b> 两个时段，日预算 40–60；抖音本地推投 3–5km，只推引流品视频。<b>考核线：每花 1 元带来 ≥3 元实收，达不到就停</b></td></tr>
-      <tr><td><b>D+90 以后</b><br>放大期</td><td>按 ROI 定</td><td>只放大算得清的：哪个套餐 ROI 最高就加，哪个平台核销率最低就砍。<b>此时重点从"拉新"切到"复购"</b>——私域券包 + 储值</td></tr>
-    </table>
-    <p><b>人群定向（投流时这么设，别用系统推荐）：</b></p>
-    <ul>
-      <li><b>地理：</b>以 16 号楼为圆心 <b>3km</b>（覆盖和顺家园 1–4 区、彩虹小镇、军粮城示范镇），最多 5km，<b>绝不投全城</b></li>
-      <li><b>人群：</b>25–45 岁、女性优先（家庭吃饭的决策者）、有孩家庭、本地常住</li>
-      <li><b>时段：</b>只投午市前 1.5 小时和晚市前 1.5 小时，其他时间关掉</li>
-      <li><b>不要投：</b>"美食爱好者""探店人群"这类泛标签——点了不会来军粮城</li>
-    </ul>
-    <div class="warn"><b>三个绝对不要做的投流动作：</b><br>① 不做 9.9 元引流（四品类慢出餐，9.9 进来的人不会点第二个菜，还把后厨打崩）<br>② 不找"达人探店"（军粮城没有能带来转化的本地达人，钱花了只换来播放量）<br>③ 不在开业第一周投流（评价还没攒够，投进来的人看到 0 条评价就划走，白烧钱）</div>
-  </div>
-
-  <div class="card">
-    <div class="chapter"><span class="no">7</span><span class="t">综合执行方案 · 从今天到第 90 天</span></div>
-    <p><b>开业前 14 天（现在就该动）：</b></p>
-    <ul>
-      <li><b>改门头副标</b>：砂锅粉面 · 戳子肉 · 板烧鱼 · 砂锅鸡（去"地锅""卤味"）</li>
-      <li><b>定菜单</b>：SKU 压到 <b>22 个以内</b>（粉面 6、戳子肉 4、板烧鱼 3、砂锅鸡 3、凉菜卤味 6）。四品类店最容易死在"什么都想卖"</li>
-      <li><b>系统安装 + 菜品录入 + 档口绑定</b>，员工练单 3 天</li>
-      <li><b>拍素材</b>：门头夜景（串灯全亮）、砂锅开盖冒泡、铁板下肉滋啦、老板熬骨汤的背影 —— 这四条是后面所有线上内容的底料</li>
-      <li><b>建社群</b>：开业前拉满 2 个群（门口扫码送卤蛋/送凉菜），目标 300 人</li>
-    </ul>
-    <p><b>开业前 7 天：</b></p>
-    <ul>
-      <li>点评/美团建店完成，12 张图（门头、环境、4 个品各 2 张）</li>
-      <li>上 3 个套餐：<b>19.9 单人砂锅粉面（限午市）</b> / <b>88 双人砂锅鸡</b> / <b>158 三人板烧鱼</b></li>
-      <li>抖音蓝V + 第一条视频发出去（不投流）</li>
-      <li>群里预热：开业前 3 天卖"19.9 尝鲜券"，<b>目标 40–50 张，不追 60</b>（一天核销 10 份以内才不崩）</li>
-    </ul>
-    <p><b>开业第一周（D1–D7）：</b></p>
-    <ul>
-      <li><b>不做全场折扣。</b>用"19.9 尝鲜 + 储值"代替，折扣只打引流品</li>
-      <li>桌桌引导评价：<b>吃到一半</b>去问"口味怎么样"，当场引导扫码，别等结账（结账时人已经在穿外套了）</li>
-      <li>菜场出口摆个易拉宝 + 发券（这是同栋楼里最便宜的流量）</li>
-      <li>每天收盘记三个数：<b>午市单量、晚市桌数、桌均</b>。三天不动就调，别等一周</li>
-    </ul>
-    <p><b>第 2–4 周：</b></p>
-    <ul>
-      <li>评价到 30 条后，开始上"买单优惠"和"收藏有礼"</li>
-      <li>储值上线：<b>首充 100 送 20（或送一份戳子肉）</b>，别一上来推 300</li>
-      <li>跑通"老带新"：老客带新客到店，两人各得一份凉菜</li>
-      <li>朋友圈/社群固定节奏：<b>每周三发"今日现熬骨汤"、每周五发"周末砂锅鸡限量 20 只"</b></li>
-    </ul>
-    <p><b>第 2–3 个月：</b></p>
-    <ul>
-      <li>按报表砍品：<b>连续两周销量后 3 名的菜，下架</b></li>
-      <li>开始小额投流（见第 6 章），只投算得清的</li>
-      <li>把午市"快餐客"转成晚市"家庭客"：午市发晚市券（满 100 减 20，仅限 17:30 后）</li>
-      <li>目标：评分 ≥4.4、评价 ≥150 条、月流水稳定在 11 万以上</li>
-    </ul>
-    <div class="hl"><b>90 天只看三个数：</b><br>① 评分能不能站到 <b>4.3 以上</b>（超过同栋楼除螺蛳粉外所有店）<br>② 晚市桌均能不能到 <b>130 以上</b>（说明锅和鱼卖动了）<br>③ 会员储值能不能到 <b>100 人</b>（说明社区关系建立了）<br>这三个数达标，这家店就稳了；不达标，投再多流也救不回来。</div>
-  </div>
-
-  <div class="card">
-    <div class="chapter"><span class="no">8</span><span class="t">四个必须避开的坑</span></div>
-    <p><b>① 四个品类四个出餐口，人手不够就是灾难。</b>粉面 10 分钟、戳子肉 10–12 分钟、砂锅鸡 20–25 分钟、板烧鱼 20–25 分钟。<b>5 个人才转得开</b>（粉面档、铁板/鱼档、砂锅档、凉菜、前厅）。少于 4 人，<b>先砍板烧鱼</b>，别硬上。</p>
-    <p><b>② 门头"现熬骨汤"如果不真熬，会反噬。</b>写了就要每天拍、每周发。这是社区店最值钱的信任状，也是最快被拆穿的谎。</p>
-    <p><b>③ 营地风装修别砸钱在硬装上。</b>200㎡ 硬装超过总投入五成，回本周期直接拉长半年。营地感靠<b>软装</b>：串灯、帐篷角、木桌、旧铁皮、绿植，几万块就能出效果。</p>
-    <p><b>④ 别跟同栋楼的快餐档口打价格战。</b>他们人均 12–22、没有堂食成本、夫妻两个人干。你 200㎡ 摆 20 桌，成本结构完全不同。<b>你的战场在晚上，不在中午的 15 块钱。</b></p>
-  </div>
-
-  <div class="card">
-    <div class="chapter"><span class="no">?</span><span class="t">需要老板确认的五件事</span></div>
-    <ul>
-      <li><b>后厨几个人？</b>决定板烧鱼上不上、砂锅鸡限量多少</li>
-      <li><b>板烧鱼用什么鱼？</b>活鱼还是冻品？决定 78 还是 108 的定价</li>
-      <li><b>卤味还做不做？</b>做就进菜单当利润品，不做就从门头拿掉</li>
-      <li><b>有没有外卖打算？</b>只有粉面和凉菜适合外卖，锅和鱼不上</li>
-      <li><b>装修到哪一步了？</b>门头还能不能改（副标这行字必须改）</li>
-    </ul>
-    <p class="muted">另：这个门店在海鸥系统里查不到（"野灶""营地""和顺欣园"均无匹配记录），<b>需要先建店才能上单、才能做线上</b>。你发的 1022783358114205 是「亮式邻炉烤肉」（新立街道滨海钢材城A座），与金角商业用房1090 不是同一地址。</p>
-  </div>
-
-  <div class="foot">
-    数据来源：海鸥系统军粮城商圈实测门店数据（评分 / 评价数 / 人均）<br>
-    营收与毛利为结构性测算，非承诺值；具体产品能力与报价以现行政策为准<br>
-    野灶营地 · 精准运营方案 · 2026.11
-  </div>
+<div class="foot">
+  数据来源：海鸥系统军粮城商圈实测门店数据<br>
+  营收与毛利为结构性测算，<b>非承诺值</b>；产品能力与报价以现行政策为准<br><br>
+  <b>野灶营地 · 精准运营方案</b> · 2026.11
+</div>
 
 </div>
 </body>
